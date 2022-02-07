@@ -1,0 +1,45 @@
+<div class="add-contact-div">
+    <div class="add-contact-sub-div-1">
+        <form #event='ngForm' class="form-div" (ngSubmit)="submitHandler(event.value)">
+            <p style="font-size: 20px;font-weight: bold;margin-top: 0px;">Add Task</p>
+
+            <div class="form-title">
+                <input type="text" placeholder="Enter Title" class="form-title-input" name="title" #title='ngModel' ngModel required/>
+                <p style="margin-top: 5px;color: red;" *ngIf="title.invalid && title.touched">Name Required*</p>
+            </div>
+
+            <div class="form-des">
+                <input type="text" placeholder="Enter Description" class="form-des-input" name="description" #description='ngModel' ngModel required/>
+                <p style="margin-top: 5px;color: red;" *ngIf="description.invalid && description.touched">Description Required*</p>
+            </div>
+
+            <button [ngClass]="event.invalid? 'add-btn-disabled':'add-btn'" type="submit" [disabled]="event.invalid" >Submit</button>
+        </form>
+    </div>
+
+    <div class="add-contact-sub-div-2">
+        <ng-component *ngIf="data.length>0; then ifblock else elseblock"></ng-component>
+        <ng-template #ifblock>
+            <div class="content" *ngFor="let item of data">
+                <div class="content-des">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                </div>
+    
+                <div class="content-option">
+                    <div style="padding: 5px;">
+                        <i class="material-icons" style="cursor: pointer;" (click)="deleteFun(item.id)">delete</i>
+                    </div>
+    
+                    <div style="padding: 5px;">
+                        <i [routerLink]="['editcontact',item.id]" [state]="{item}" class="material-icons" style="cursor: pointer;">edit</i>
+                    </div>    
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #elseblock>
+            <h2 style="text-align: center;">Add Some Task :)</h2>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<h1 style="margin-left: 5px;">Angular reactive form validations</h1>
+
+<!-- Reactive form validation -->
+<form class="formDiv" [formGroup]='loginForm' (ngSubmit)="userSignin()">
+    <div style="margin-bottom: 5px;">
+        <p>Name*:</p>
+        <input
+            type='text' 
+            placeholder="Enter Name" 
+            class="input" 
+            formControlName='name'           
+            />    
+        <br/><p style="color: red;" *ngIf="name && name.invalid && name.touched">Enter name</p>
+    </div>
+
+    <div style="margin-bottom: 5px;">
+        <p>Email*:</p>
+        <input
+            type='email' 
+            placeholder="Enter Email" 
+            class="input" 
+            formControlName='email'           
+            />    
+        <br/><p style="color: red;" *ngIf="email && email.invalid && email.touched">Enter valid email</p>
+    </div>
+
+    <div style="margin-bottom: 5px;">
+        <p>DOB*:</p>
+        <input 
+            type="date" 
+            placeholder="Enter DOB"  
+            class="input" 
+            formControlName='dob'            
+            required/>
+        <br/><p style="color: red;" *ngIf="dob && dob.invalid && dob.touched">Enter DOB</p>    
+    </div>
+
+    <div style="margin-bottom: 5px;">
+        <p>Age*:</p>
+        <input type="number" 
+            placeholder="Enter age"  
+            class="input" 
+            formControlName='age'
+            required/>
+        <br/><p style="color: red;" *ngIf="age && age.invalid && age.touched">Enter age</p>
+    </div>
+
+    <div style="margin-top: 5px;margin-bottom: 10px;">
+        <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,70 @@
+<h1>Pipes in Angular with example</h1>
+
+<hr/>
+
+<div style="display: flex;align-items: center;">
+    <h3>{{text | uppercase}}</h3>&nbsp;
+    <p>(Uppercase pipe)</p>
+</div>
+
+<div style="display: flex;align-items: center;">
+    <h3>{{text | titlecase}}</h3>&nbsp;
+    <p>(Titlecase Pipe)</p>
+</div>
+
+<hr/>
+
+<div>
+    <h3>{{todayDate}}</h3>&nbsp;
+
+    <div style="display: flex;align-items: center;margin-top: -20px;">
+        <h3>{{todayDate | date}}</h3>
+        <p>&nbsp;(Date pipe)</p>
+    </div>
+
+    <div style="display: flex;align-items: center;margin-top: -20px;">
+        <h3>{{todayDate | date: 'fullDate'}}</h3>
+        <p>&nbsp;(Full date pipe)</p>
+    </div>
+</div>
+
+<hr/>
+
+<div>
+    <div style="display: flex;align-items: center;">
+        <h3>{{users | json}}</h3>
+        <p>&nbsp;(json pipe)</p>
+    </div>
+ 
+    <div style="display: flex;align-items: center;">
+        <h3>{{'Post Malone' | slice: 1:6}}</h3>
+        <p>&nbsp;(Slice pipe)</p>
+    </div>
+
+    <div style="display: flex;align-items: center;">
+        <div style="margin-right: 10px;">
+            <h3>{{'20' | currency:'USD'}}<span><br/>{{'200' | currency: 'INR'}}</span></h3>
+        </div>
+
+        <div>
+            <p>(Currency Pipe)</p>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<div>
+    <h3>Custom Pipes</h3>
+    <h5>USD to INR</h5>
+    USD: <input #event type='text' placeholder="Enter Value" (keyup)="keyupHandler(event.value)"/>
+    <ng-component *ngIf="USD === ''; then ifBlock else elseBlock"></ng-component>
+    
+    <ng-template #ifBlock>
+        <p>No input received</p>
+    </ng-template>
+    
+    <ng-template #elseBlock>
+        <p>INR: {{USD | usdInr}}</p>
+    </ng-template>
+</div>

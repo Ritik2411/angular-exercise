@@ -1,0 +1,46 @@
+.main-container{
+    padding: 20px;
+}
+
+.content-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .form-div{
+        width: 80%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 5px;
+        padding: 20px;
+
+        .input-text{
+            width: 98%;
+            height: 25px;
+            padding-left: 5px;
+        }
+
+        .input-des{
+            width: 98%;
+            height: 25px;
+            padding-left: 5px;
+        }
+
+        .edit-btn{
+            padding: 8px;
+            border: 1px solid #0d6efd;
+            background-color: #0d6efd;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .edit-btn-disabled{
+            padding: 8px;
+            border: 1px solid #6ba5fa;
+            background-color: #6ba5fa;
+            border-radius: 5px;
+            color: white;
+        }
+    }
+}
+

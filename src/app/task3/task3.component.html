@@ -1,0 +1,20 @@
+<div style="margin: 10px;">
+    <h2>ngOnInit & ngOndestroy</h2>
+    <h3>{{construc}}</h3>
+    <h3>{{init}}</h3>
+</div>
+
+<div style="margin: 10px;">
+    <button (click)="toggleChild()">Toggle Child</button>
+    <div *ngIf="togChild">
+        <app-child></app-child>
+    </div>
+</div>
+
+<hr/>
+
+<div style="margin: 10px;">
+    <h2>ngOnchanges && ngDoCheck</h2>
+    <input #event type="text" placeholder="Enter text" (keyup)="sendText(event.value)"/>
+    <app-child [text]='sendTex'></app-child>
+</div>

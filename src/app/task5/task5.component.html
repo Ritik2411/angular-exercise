@@ -1,0 +1,65 @@
+<h1>Directives</h1>
+
+<hr/>
+
+<h3>ngIf</h3>
+<button (click)="show()">Show</button>
+<p *ngIf="showText">Hidden text</p>
+
+<hr/>
+
+<h3>ngFor</h3>
+<table border>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let item of users">
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.age}}</td>
+    </tr>
+</table>
+
+<hr/>
+
+<h3>ngClass</h3>
+<button (click)="changeColor()">Change Color</button>
+<p [ngClass]="changeCol? 'red':'blue'" style="font-weight: bold;">Text</p>
+
+<hr/>
+
+<h3>ngSwitch</h3>
+<div>
+    <input #event type="text" (keyup)="handleText(event.value)" placeholder="Type red, blue or green"/>
+    <button (click)="getText()">Click</button> 
+</div>
+
+<div [ngSwitch]="setColor">
+    <p *ngSwitchCase= "'red'" style="color: red;">Red text</p>
+    <p *ngSwitchCase= "'blue'" style="color: blue;">Blue text</p>
+    <p *ngSwitchCase= "'green'" style="color: green;">Green text</p>
+    <p *ngSwitchDefault>Default text</p>
+</div>
+
+<hr/>
+<h3>ngModel</h3>
+<div>
+    <input type='text' placeholder="Enter text" [(ngModel)]='ngmodelText'/>
+    <p>{{ngmodelText}}</p>
+</div>
+
+<hr/>
+
+<h3>ngStyle</h3>
+<button [ngStyle]="{'padding':'10px','border':'none','color':'white','background-color':'#0d6efd','border-radius':'5px'}">Click</button>
+
+<hr/>
+
+<h3>Custom Directive</h3>
+<div style="display: flex">
+    <p appRedCol>Custom Directive</p>
+    &nbsp;<p>(Changes text color to red)</p>
+</div>
+

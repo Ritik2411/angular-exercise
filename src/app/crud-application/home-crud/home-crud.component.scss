@@ -1,0 +1,91 @@
+.add-contact-div{
+    padding: 20px;
+    display: flex;
+}
+
+.add-contact-sub-div-1{
+    width: 50%;
+    margin: 5px;
+
+    .form-div{
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 5px;
+        
+        .form-title{
+            margin-bottom: 15px;
+            width: 100%;
+    
+            .form-title-input{
+                width: 100%;
+                height: 25px;
+                padding-left: 5px;
+            }
+        }
+    
+        .form-des{
+            margin-bottom: 15px;
+            width: 100%;
+    
+            .form-des-input{
+                width: 100%;
+                height: 25px;
+                padding-left: 5px;
+            }
+        }
+    
+        .add-btn{
+            padding: 8px;
+            border: 1px solid #0d6efd;
+            background-color: #0d6efd;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .add-btn-disabled{
+            padding: 8px;
+            border: 1px solid #6ba5fa;
+            background-color: #6ba5fa;
+            border-radius: 5px;
+            color: white;
+        }
+    }
+}
+
+.add-contact-sub-div-2{
+    width: 50%;
+    margin: 5px;
+}
+
+.content{
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+
+    .content-des{
+        flex-grow: 1;
+    }
+    
+    .content-option{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .add-contact-div{
+        flex-direction: column;
+    }
+
+    .add-contact-sub-div-1{
+        width: 100%;
+    }
+
+    .add-contact-sub-div-2{
+        width: 100%;
+        margin-top: 20px;
+    }
+}

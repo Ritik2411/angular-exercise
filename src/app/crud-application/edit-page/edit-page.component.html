@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="content-div">
+        <form #event='ngForm' class="form-div" (ngSubmit)="handleSubmit(event.value)">
+            <h2>Edit Task</h2>
+
+            <div style="margin-bottom: 20px;">
+                <input #title='ngModel' type="text" class="input-text" placeholder="Enter Title" name='title' [ngModel]="data.title" ngModel required/>
+                <p *ngIf="title.invalid && title.touched" style="color: red;margin-top: 5px;">Name Required</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input #description='ngModel' type="text" class="input-des" placeholder="Enter Description" name='description' [ngModel]="data.description" ngModel required/>
+                <p *ngIf="description.invalid && description.touched" style="color: red;margin-top: 5px;">Description Required</p>
+            </div>
+
+            <div>
+                <button type="submit" [ngClass]="event.invalid?'edit-btn-disabled':'edit-btn'" [disabled]="event.invalid">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>

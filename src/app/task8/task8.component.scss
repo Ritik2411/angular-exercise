@@ -1,0 +1,21 @@
+.formDiv{
+    padding: 10px;
+    margin-left: 100px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+
+    .input{
+        padding: 5px 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .input:focus{
+        outline: none;
+    }
+}
+
